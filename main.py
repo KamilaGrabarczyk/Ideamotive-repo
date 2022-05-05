@@ -1,0 +1,2 @@
+
+/Users/kamilag/PycharmProjects/Ideamotive
