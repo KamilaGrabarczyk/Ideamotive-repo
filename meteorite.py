@@ -15,6 +15,7 @@ def create_df_from_json(json_data):
     df = pd.json_normalize(json_data).apply(lambda x: x.str.replace('.', ',', regex=False))
     df['year'] = df['year'].str.split('-', 1).str[0]
     df = df[pd.to_numeric(df['year']) >= 1800]
+    df['geolocation'] = df['geolocation.latitude'].str.replace(',', '.') + ', ' + df['geolocation.longitude'].str.replace(',', '.')
     return df
 
 
